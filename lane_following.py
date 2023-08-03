@@ -38,6 +38,8 @@ def recommend_direction(center,slope):
     elif center <970 and center>950:
         return("forward")
 
+
+
 def arm_rov(mav_connection):
     """
     Arm the ROV, wait for confirmation
@@ -103,6 +105,7 @@ if __name__ == "__main__":
     ####
     # Initialize ROV
     ####
+
     mav_connection = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
     mav_connection.wait_heartbeat()
     # Arm the ROV and wait for confirmation

@@ -3,6 +3,10 @@ import cv2
 import matplotlib.pyplot as plt
 import random as rand
 
+
+### ROME WROTE THE ENTIRETY OF THIS FILE
+### NOT JULES OR ARTHUR!! :ANGRY_EMOTICON:
+
 def gray(img):
     return cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
@@ -36,9 +40,10 @@ def detect_lines(img, threshold1=50,threshold2=150, apertureSize=3,minLineLength
 
 def my_detect_lines(img):
     #gray = cv2.medianBlur(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY),41) # convert to grayscale
-    gray = gray(img) # SHOULD RETURN NP ARRAY
 
-    blur = blur(gray, 41) # SHOULD RETURN NP ARRAY
+    new_gray = gray(img) # SHOULD RETURN NP ARRAY
+
+    blur = blur(new_gray, 41) # SHOULD RETURN NP ARRAY
 
     thresh = binary_threshold(blur)# SHOULD BE NP ARRAY
 
@@ -146,7 +151,8 @@ def detect_lanes(lines,s_1=1,x_1=30):
     #intercepts=s_n_i[1]
 
 ##Comparisons to add:
-##Compare distance between line centers and line endpoints, should be similar for parallel lines
+##Compare distance between line centers and line endpoints, should be similar for parallel lines, 
+# (comment from jules)they don't need to be the same length or close to the same length i do not beleive we should add this to the programm
 ##Add condition for if lines are negatives of eachother, for lines that are head on to the camera
 ##TODO
 ##USE COMBINATION FUNCTION
